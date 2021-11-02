@@ -4,7 +4,7 @@ let app = express()
 let server = require('http').Server(app)
 
 // use the environment port if available, or default to 3000
-let port = process.env.port || 3000
+let port = process.env.port || 3001
 
 // serve static files from /public
 app.use(express.static('public'))
