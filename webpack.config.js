@@ -9,13 +9,14 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      { test: /\.ts$/, use: 'ts-loader', exclude: /node_modules/, },
     ],
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: [".webpack.js", ".web.js", ".ts", ".tsx", ".js"]
   },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
+    filename: "bundle.js",
+    path: __dirname + "/public/js"
+},
 };
