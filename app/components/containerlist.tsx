@@ -6,7 +6,7 @@ export class ContainerListProps {
     title?: string
 }
 
-export class containerlist extends react.Component<ContainerListProps, {}> {
+export class ContainerList extends react.Component<ContainerListProps, {}> {
     render() {
         return (
             <div>

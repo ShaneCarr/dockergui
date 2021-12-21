@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as _ from 'lodash'
 import { Container, ContainerListItem } from './containerlistitem'
-
+import { ContainerList } from './containerlist'
 const containers: Container[] = [
   {
       id: '1',
@@ -31,12 +31,20 @@ export class AppComponent extends React.Component<{}, AppState> {
   }
 
   render() {
+    alert('test')
     const partitioned = _.partition(containers, c => c.state == 'running')
     this.state = {
       containers: partitioned[0],
       stoppedcontainers: partitioned[1]
     }
 
-    return (<div className="container"></div>)
+      return (
+          <div className="container">
+              <h1 className="page-header">docker dashboard</h1>
+  
+              <ContainerList title="running" containers={this.state.containers} />
+              <ContainerList title="stopped containers" containers={this.state.stoppedcontainers} />
+          </div>
+      )
   }
 }
